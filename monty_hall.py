@@ -6,9 +6,10 @@ from __future__ import division
 import random
 import time
 
-#
+# contestant sticks with one door
 def pick_one_door(runtime):
     # defines default values
+    # not sure if anyone needs to record the winning doors
     #win_doors = []
     choices = []
     wins = []
@@ -18,18 +19,22 @@ def pick_one_door(runtime):
         now = time.time()-then
         # choose winning door
         winning_door = random.choice('abc')
+        # not sure if anyone needs to record the winning doors
         #win_doors.append(winning_door)
         # contestant chooses door
         choice = random.choice('abc')
+        # record choice
         choices.append(choice)
         # determines if the contestant chose the right door
         if choice == winning_door:
-            # tally the win and record the choice
+            # record the win
             wins.append(choice)
     return wins, choices
 
+# contestant is shown whats behind another door, and decides
+# to pick another door
 def pick_two_doors(runtime):
-    win_doors = []
+    #win_doors = []
     first_choices = []
     choices = []
     wins = []
@@ -41,7 +46,7 @@ def pick_two_doors(runtime):
         # copies the three door list
         two_doors = three_doors[:]
         winning_door = random.choice('abc')
-        win_doors.append(winning_door)
+        #win_doors.append(winning_door)
         # determines which two doors have goats behind them
         if winning_door == 'a':
             goat1 = 'b'
