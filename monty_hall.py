@@ -81,7 +81,7 @@ def pick_two_doors(runtime):
             modified_choice = two_doors[-1]
             choices.append(modified_choice)
         if modified_choice == winning_door:
-            wins.append(choices)
+            wins.append(modified_choice)
     return wins, choices
 
 def do_maths(wins, choices, type):
@@ -116,11 +116,11 @@ def main():
     print("Welcome to the Monty Hall Problem!".center(80, '/'))
     # begins timer
     start = time.time()
-    w, c = pick_one_door(10)
+    w, c = pick_one_door(5)
     do_maths(w, c, 1)
-    w, c = pick_two_doors(10)
+    w, c = pick_two_doors(5)
     do_maths(w, c, 2)
-    end = time.time()-start
+    end = str(round(time.time()-start))
     print('\nran for:  ' + end + ' seconds\n' + '...fin')
 
 if __name__ == '__main__':
