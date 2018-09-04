@@ -48,6 +48,7 @@ def pick_two_doors(runtime):
         winning_door = random.choice('abc')
         #win_doors.append(winning_door)
         # determines which two doors have goats behind them
+        # if the goat thing doesnt make sense google monty hall problem
         if winning_door == 'a':
             goat1 = 'b'
             goat2 = 'c'
@@ -57,8 +58,7 @@ def pick_two_doors(runtime):
         else:
             goat1 = 'a'
             goat2 = 'b'
-        # picks random door, then discards answer by removing
-        # from the list, searches the remaining two elements
+        # contestant picks a door
         choice = random.choice('abc')
         first_choices.append(choice)
         if choice == goat1:
